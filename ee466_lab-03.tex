@@ -2,12 +2,12 @@
 % LAB 167
 % MÄTNING PÅ ELEKTRISKA KRETSAR
 % --------------------------
-% Last updated <2015-03-10> 
+% Last updated <2015-03-10>
 %
 % Author:
 % Jonas Sjöberg     <tel12jsg@student.hig.se>
 % Oscar Wallberg    <tco13owg@student.hig.se>
-% 
+%
 % License:
 % Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 % See LICENSE.md for full licensing information.
@@ -34,7 +34,7 @@
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 % ==============================================================================
-% DOCUMENT METADATA 
+% DOCUMENT METADATA
 % ==============================================================================
 \title{EE466 \\ Lab 167 \\ Mätning på elektriska kretsar}
 
@@ -85,7 +85,7 @@
 \newpage
 
 % ==============================================================================
-% SECTION: INTRODUKTION 
+% SECTION: INTRODUKTION
 % ==============================================================================
 \section{Introduktion}\label{setup}
 % ==============================================================================
@@ -215,13 +215,14 @@ högre resistansvärden.  Felvärdet kan beräknas med Ekvation \ref{eq:err1} so
 vid en högre resistans enligt \ref{eq:err2} blir 0,09\%, vilket klart påverkar
 mätresultatet.  Men eftersom den maximala resistansen som används är
 \unit[100]{\si{\kohm}} så kan belastning från multimetern förbises.
-\par Utan belastning är spänningen vid tvåpolens "utgång", 
-$V_{AB}$ = \unit[7.16]{\si{\volt}}. 
+\par Utan belastning är spänningen vid tvåpolens "utgång",
+$V_{AB}$ = \unit[7.16]{\si{\volt}}.
 \par Med $R_{3}$ ställd på sin maximala resistans är spänningen oförändrad.
-När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att sjunka.
-\par Halva tomgångsspänningen $\frac{V_{AB}}{2} = \unit[3.58]{\si{\volt}}$ avläses
-vid en last av $R_{3}$ = \unit[341]{\si{\ohm}}. 
-Strömmen genom lasten är då $I = \unit[10.531]{\si{\mA}}$.
+När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att
+sjunka.
+\par Halva tomgångsspänningen $\frac{V_{AB}}{2} = \unit[3.58]{\si{\volt}}$
+avläses vid en last av $R_{3}$ = \unit[341]{\si{\ohm}}.  Strömmen genom lasten
+är då $I = \unit[10.531]{\si{\mA}}$.
 
 % Obelastad polspänning  Vab = 7.16V
 
@@ -230,14 +231,15 @@ Strömmen genom lasten är då $I = \unit[10.531]{\si{\mA}}$.
 % fel(%) = [(uppmätt - förväntat) / förväntat] * 100
 % (((1/((1/x)+(1/(10e6))))-x)/x)*100
 \begin{equation}\label{eq:err1}
-\text{Felvärde}(\si{\percent}) = 
+\text{Felvärde}(\si{\percent}) =
 \frac{\text{Uppmätt värde} - \text{Förväntat värde}}{\text{Förväntat värde}} \times 100
 \end{equation}
 
-Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation \ref{eq:err2}.
-\par Ett felvärde på 0,09\% är utgör ett signifikant mätfel. I det här fallet
-är lastresistansen som effektivt parallellkopplas med multimetern mycket lägre än
-\unit[1]{\si{\Mohm}} och mätfelet blir inte fullt så allvarligt.
+Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation
+\ref{eq:err2}.  \par Ett felvärde på 0,09\% är utgör ett signifikant mätfel. I
+det här fallet är lastresistansen som effektivt parallellkopplas med
+multimetern mycket lägre än \unit[1]{\si{\Mohm}} och mätfelet blir inte fullt
+så allvarligt.
 
 \begin{align}
 \text{Felvärde }{R}_{last}(\si{\percent}) &= \frac{(\frac{1}{\frac{1}{R_{3}}+\frac{1}{R{M_{2}}}}) - R_{3}}{R_{3}} \times 100 \label{eq:err2}\\
@@ -259,7 +261,8 @@ Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation 
 
 \subsection{Teoretisk härledning med Thévenins teorem}
 % ------------------------------------------------------------------------------
-Kretsen som levererar spänningen ritas om till den i Figur \ref{fig:5-thevenin-schem}.
+Kretsen som levererar spänningen ritas om till den i Figur
+\ref{fig:5-thevenin-schem}.
 
 \begin{figure}
     \centering
@@ -269,8 +272,8 @@ Kretsen som levererar spänningen ritas om till den i Figur \ref{fig:5-thevenin-
     \label{fig:5-thevenin-schem}
 \end{figure}
 
-Den obelastade "tomgångsspänningen" mellan punkterna A och B, $V_{AB}$ beräknas enligt
-Ekv. \ref{eq:thev1}.
+Den obelastade "tomgångsspänningen" mellan punkterna A och B, $V_{AB}$ beräknas
+enligt Ekv. \ref{eq:thev1}.
 % 10*(1,2e3/(470+1,2e3)) = 7,18562874251497005988
 \begin{equation}\label{eq:thev1}
 \begin{split}
@@ -292,8 +295,8 @@ Kretsen blir då den i Figur \ref{fig:5-thevenin-schem2}.
     \label{fig:5-thevenin-schem2}
 \end{figure}
 
-Den inre resistansen utgörs av parallellkopplingen $R_{1}$ och $R_{2}$ och beräknas enligt 
-Ekv. \ref{eq:thev2}. 
+Den inre resistansen utgörs av parallellkopplingen $R_{1}$ och $R_{2}$ och
+beräknas enligt Ekv. \ref{eq:thev2}.
 % (470*1200)/(470+1200) = 337,72455089820359281437
 \begin{equation}\label{eq:thev2}
 \begin{split}
@@ -303,8 +306,9 @@ R_{th} = \unit[337,72]{\si{\ohm}}
 \end{split}
 \end{equation}
 
-De teoretiska värdena för Théveninekvivalensen i \ref{eq:thev3} används i Figur 
-\ref{fig:5-thevenin-schem3} som har ett beteende ekvivalent med den ursprungliga tvåpolen.
+De teoretiska värdena för Théveninekvivalensen i \ref{eq:thev3} används i Figur
+\ref{fig:5-thevenin-schem3} som har ett beteende ekvivalent med den
+ursprungliga tvåpolen.
 
 \begin{align}\label{eq:thev3}
 V_{AB} &= \unit[7,185]{\si{\volt}}\\
@@ -452,11 +456,11 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
 
 \subsection{Mätresultat}\label{}
 % ------------------------------------------------------------------------------
-% TODO: Notera resonansfrekvensen. 
+% TODO: Notera resonansfrekvensen.
 
 \subsection{Kommentar}\label{}
 % ------------------------------------------------------------------------------
-% TODO: + Kommentera följande:                                                            
+% TODO: + Kommentera följande:
 %          - Förekommer fasförskjutning mellan uTG och uR vid denna frekvens?
 %          - Ändrar fasen sig om du varierar frekvensen kring den
 %            uppmätta resonansfrekvensen?  I så fall hur?
