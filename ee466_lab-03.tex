@@ -180,20 +180,29 @@ högre resistansvärden.  Felvärdet kan beräknas med Ekvation \ref{eq:err1} so
 vid en högre resistans enligt \ref{eq:err2} blir 0,09\%, vilket klart påverkar
 mätresultatet.  Men eftersom den maximala resistansen som används är
 \unit[100]{\si{\kohm}} så kan belastning från multimetern förbises.
-\par Värdet hos dekadresistorn $R_{3}$ sveptes över området 
-\unit[500]{\si{\ohm}}--\unit[100]{\si{\kohm}} och värden uppmättes enligt 
-Tabell \ref{emktable}.
+\par Utan belastning är spänningen vid tvåpolens "utgång", 
+$V_{AB}$ = \unit[7.16]{\si{\volt}}. 
+\par Med $R_{3}$ ställd på sin maximala resistans är spänningen oförändrad.
+När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att sjunka.
+\par Halva tomgångsspänningen $\frac{V_{AB}}{2} = \unit[3.58]{\si{\volt}}$ avläses
+vid en last av $R_{3}$ = \unit[341]{\si{\ohm}}. 
+Strömmen genom lasten är då $I = \unit[10.531]{\si{\mA}}$.
+
+% Obelastad polspänning  Vab = 7.16V
+
 
 % Förändring i procent;
 % fel(%) = [(uppmätt - förväntat) / förväntat] * 100
 % (((1/((1/x)+(1/(10e6))))-x)/x)*100
-
 \begin{equation}\label{eq:err1}
 \text{Felvärde}(\si{\percent}) = 
 \frac{\text{Uppmätt värde} - \text{Förväntat värde}}{\text{Förväntat värde}} \times 100
 \end{equation}
 
-Vid en resistans på t.ex. \unit[10]{\si{\Mohm}} blir felvärdet enligt Ekvation \ref{eq:err2}
+Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation \ref{eq:err2}.
+\par Ett felvärde på 0,09\% är utgör ett signifikant mätfel. I det här fallet
+är lastresistansen som effektivt parallellkopplas med multimetern mycket lägre än
+\unit[1]{\si{\Mohm}} och mätfelet blir inte fullt så allvarligt.
 
 \begin{align}
 \text{Felvärde }{R}_{last}(\si{\percent}) &= \frac{(\frac{1}{\frac{1}{R_{3}}+\frac{1}{R{M_{2}}}}) - R_{3}}{R_{3}} \times 100 \label{eq:err2}\\
@@ -205,11 +214,55 @@ Vid en resistans på t.ex. \unit[10]{\si{\Mohm}} blir felvärdet enligt Ekvation
 
 \begin{figure}
 \centering
-\includegraphics[width=0.7\linewidth]{img/lab-03_5-schem}
+\includegraphics[width=0.7\linewidth]{img/5-schem}
 \caption[Kopplingsschema för mätning av tvåpol.]
 {Koppling vid mätning av EMK och inre resistans i en tvåpol.}
 \label{fig:5-schem}
 \end{figure}
+
+\subsection{Teoretisk härledning med Thévenins teorem}
+% ------------------------------------------------------------------------------
+Kretsen som levererar spänningen ritas om till den i Figur \ref{fig:5-thevenin-schem}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{img/5-thevenin-schem}
+    \caption[Théveninekvivalens]
+    {Den obelastade kretsen som utgör källpolspänningen}
+    \label{fig:5-thevenin-schem}
+\end{figure}
+
+Den obelastade "tomgångsspänningen" mellan punkterna A och B, $V_{AB}$ beräknas enligt
+Ekv. \ref{eq:thev1}.
+% 10*(1,2e3/(470+1,2e3)) = 7,18562874251497005988
+\begin{equation}\label{eq:thev1}
+\begin{split}
+V_{AB} = V_{th} \times \frac{R_2}{R_1 + R_2}\\
+V_{AB} = \unit[10]{\si{\volt}} \times \frac{\unit[1.2]{\si{\kohm}}}{\unit[470]{\si{\ohm}}+ \unit[1.2]{\si{\kohm}}}\\
+V_{AB} = \unit[10]{\si{\volt}} \times \frac{\num{1.2e3}}{\num{470}+\num{1.2e3}}\\
+V_{AB} = \unit[7,185]{\si{\volt}}
+\end{split}
+\end{equation}
+
+Den inre resistansen beräknas genom att kortsluta spänningskällan.
+Kretsen blir då den i Figur \ref{fig:5-thevenin-schem2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{img/5-thevenin-schem-2}
+    \caption[Beräkning av Théveninekvivalens]
+    {Kortsluten spänningskälla för att hitta inre resistans}
+    \label{fig:5-thevenin-schem2}
+\end{figure}
+
+Den inre resistansen
+är parallellkopplingen av $R_{1}$ och $R_{2}$ och beräknas enligt 
+
+\begin{equation}\label{eq:thev2}
+\begin{split}
+R_{th} = 
+\end{split}
+\end{equation}
 
 
 
