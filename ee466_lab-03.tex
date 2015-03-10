@@ -98,17 +98,52 @@
 \section{Mätning på seriekrets}\label{}
 % ==============================================================================
 % TODO: Kopplingsschema.
-
+Seriekretsen enligt figur \ref{fig:1-mm-schem} kopplades upp. 5 \si{\volt} valdes för spänningskällan.
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[scale=0.7]{misc/krets1.png}
+    \caption{Seriekrets}
+    \label{fig:1-mm-schem}
+\end{figure}
 \subsection{Mätresultat}\label{}
 % ------------------------------------------------------------------------------
 % TODO: + Spänningarna mellan AB, BC och AC.
-
+Resistensen mellan A och B, $R_1$, mättes upp till $100.561 \ohm$ och mellan B och C, $R_2$, mättes $217.78 \ohm$ upp. Följande spänningar mättes därefter upp:
+\begin{math}
+U_{AB} = 1.58 \si{\volt}\\
+U_{BC} = 3.41 \si{\volt}\\
+U_{AC} = 4.999 \si{\volt}
+\end{math}
 \subsection{Kommentar}\label{}
 % ------------------------------------------------------------------------------
 % TODO: Kommentera utgående från Kirchhoffs 2:a lag.
 %       Kommentera utgående från spänningsdelningslagen.
+Spänningsdelningslagen ger:\\[+2mm]
+\begin{math}
+U_{AB} = U\times\frac{R_{1}}{R_{1}+R_{2}}\\[+2mm]
+U_{AB} = 4.999\times\frac{100.561}{100.561+217.78}\\[+2mm]
+U_{AB} = 1.579\\
+\\
+U_{BC} = U\times\frac{R_{2}}{R_{1}+R_{2}}\\[+2mm]
+U_{BC} = 4.999\times\frac{217.78}{100.561+217.78}\\[+2mm]
+U_{BC} = 3.42\\
+\\
+U_{AC} = U\times\frac{R_{1}+R_{2}}{R_{1}+R_{2}}\\[+2mm]
+U_{AC} = U = 4.999\\
+\end{math}
 
+Kirchhoff's 2:a lag:
+\begin{quote}
+Summan av samtliga emk:s som ingår i en sluten krets är lika med summan av potentialfallen, eller\\
+\begin{math}
+u_{1} + u_{2} + \ldots + u_{n} = 0\\
+\text{där }u_{k} \text{ betecknar en potentialändring.}
+\end{math}
+\end{quote}
 
+Enligt Kirchhoff's lag:\\
+$U - U_{AB} - U_{BC} = 0$\\
+$4.99 - 1.579 - 3.42 = 0$, vilket stämmer.
 % ==============================================================================
 % SECTION: 2 iNVERKAN AV EN PARALLELLGREN PÅ EN KRETS
 % ==============================================================================
