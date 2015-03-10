@@ -220,6 +220,8 @@ Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation 
 \label{fig:5-schem}
 \end{figure}
 
+\pagebreak
+
 \subsection{Teoretisk härledning med Thévenins teorem}
 % ------------------------------------------------------------------------------
 Kretsen som levererar spänningen ritas om till den i Figur \ref{fig:5-thevenin-schem}.
@@ -249,31 +251,40 @@ Kretsen blir då den i Figur \ref{fig:5-thevenin-schem2}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.4\linewidth]{img/5-thevenin-schem-2}
+    \includegraphics[width=0.4\linewidth]{img/5-thevenin-schem2}
     \caption[Beräkning av Théveninekvivalens]
-    {Kortsluten spänningskälla för att hitta inre resistans}
+    {Spänningskälla kortsluten för att hitta inre resistans}
     \label{fig:5-thevenin-schem2}
 \end{figure}
 
-Den inre resistansen
-är parallellkopplingen av $R_{1}$ och $R_{2}$ och beräknas enligt 
-
+Den inre resistansen utgörs av parallellkopplingen $R_{1}$ och $R_{2}$ och beräknas enligt 
+Ekv. \ref{eq:thev2}. 
+% (470*1200)/(470+1200) = 337,72455089820359281437
 \begin{equation}\label{eq:thev2}
 \begin{split}
-R_{th} = 
+R_{th} = \frac{1}{\frac{1}{R_{1}} + \frac{1}{R_{2}}}\\
+R_{th} = \frac{1}{\frac{1}{\unit[470]{\si{\ohm}}} + \frac{1}{\unit[1.2]{\si{\kohm}}}}\\
+R_{th} = \unit[337,72]{\si{\ohm}}
 \end{split}
 \end{equation}
 
+De teoretiska värdena för Théveninekvivalensen i \ref{eq:thev3} används i Figur 
+\ref{fig:5-thevenin-schem3} som har ett beteende ekvivalent med den ursprungliga tvåpolen.
 
+\begin{align}\label{eq:thev3}
+V_{AB} &= \unit[7,185]{\si{\volt}}\\
+R_{th} &= \unit[337,72]{\si{\ohm}}
+\end{align}
 
-% TODO: Mät tvåpolens tomgångsspänning, Uab0, d.v.s. ställ Ry på sitt maximala värde.
-%       Minska Ry tills spänningen över Ry har minskat till 0.5.Uab0 (d.v.s hälften av
-%       tomgångsspänningen).
-%
-%       * Värdet på Ry då tvåpolens spänning har sjunkit till hälften är lika stort som
-%         tvåpolens inre resistans, Ri. Utred varför!
-%       * Härled med Thévenins teorem de teoretiska värden på Uab0 och Ri.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{img/5-thevenin-schem3}
+    \caption[Beräkning av Théveninekvivalens]
+    {Fullständig ekvivalent krets}
+    \label{fig:5-thevenin-schem3}
+\end{figure}
 
+\pagebreak
 
 % ==============================================================================
 % SECTION: 6 KARAKTERISTIK HOS EN LYSDIOD
