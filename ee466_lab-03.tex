@@ -160,25 +160,118 @@
 % ==============================================================================
 % SECTION: 5 MÄTNING AV EMK OCH INRE RESISTANS I EN TVÅPOL
 % ==============================================================================
-\section{Mätning av emk och inre resistans i en tvåpol}\label{}
+\section{Mätning av emk och inre resistans i en tvåpol}\label{measure_emk}
 % ==============================================================================
-Dessa mätningar görs i syfte att undersöka konceptet tvåpol och reducering av 
-komplexa nät med hjälp av Thévenins ekvivalens.
-\par En så kallad experimentplatta eller "breadboard" används för att konstruera
-kretsen som illustreras i Figur \ref{fig:lab-03_5-schem}. Nätaggregatet \textbf{V1}
-är ett strömbegränsande laboratorieaggregat HP3631A.
-Spänningen \textbf{U} mäts över dekadresistorn \textbf{R3} med
-bänkmultimetern \textbf{M2}, en HP34401A. 
-Strömmen \textbf{I} mäts genom att den handhållna multimetern Tenma 72-2050
-kopplas mellan punkten \textbf{A} och \textbf{R3}. 
+Dessa mätningar görs i syfte att undersöka konceptet tvåpol och demonstrera
+konceptet av att studera och räkna med reducering av komplexa nät med hjälp av
+Thévenins ekvivalens.  \par En så kallad experimentplatta eller "breadboard"
+används för att konstruera kretsen som illustreras i Figur \ref{fig:5-schem}.
+Nätaggregatet $V_{1}$ är ett strömbegränsande laboratorieaggregat HP3631A.
+Spänningen $U$ mäts över dekadresistorn $R_{3}$ med bänkmultimetern $M_{2}$, en
+HP34401A.  Strömmen $I$ mäts genom att den handhållna multimetern Tenma 72-2050
+kopplas mellan punkten $A$ och $R_{3}$.  \par Källan som driver spänningen
+$V_{AB}$ utgörs av $V_{1}$, $R_{1}$ och $R_{2}$.  \par Lasten som är ansluten
+till utgången utgörs av dekadresistorn $R_{3}$.  Resistansen hos multimetern
+$M_{2}$ parallellkopplas med $R_{3}$ och påverkar således kretsen på ett
+oönskat sätt. Om man antar att $M_{2}$ har en inre resistans på
+\unit[10]{\si{\Mohm}} förändras lastens effektiva resistans. Förändringen är
+försumbar då $R_{3}$ har ett lågt värde men felvärdet blir klart påtagligt vid
+högre resistansvärden.  Felvärdet kan beräknas med Ekvation \ref{eq:err1} som
+vid en högre resistans enligt \ref{eq:err2} blir 0,09\%, vilket klart påverkar
+mätresultatet.  Men eftersom den maximala resistansen som används är
+\unit[100]{\si{\kohm}} så kan belastning från multimetern förbises.
+\par Värdet hos dekadresistorn $R_{3}$ sveptes över området 
+\unit[500]{\si{\ohm}}--\unit[100]{\si{\kohm}} och värden uppmättes enligt 
+Tabell \ref{emktable}.
+
+% Förändring i procent;
+% fel(%) = [(uppmätt - förväntat) / förväntat] * 100
+% (((1/((1/x)+(1/(10e6))))-x)/x)*100
+
+\begin{equation}\label{eq:err1}
+\text{Felvärde}(\si{\percent}) = 
+\frac{\text{Uppmätt värde} - \text{Förväntat värde}}{\text{Förväntat värde}} \times 100
+\end{equation}
+
+Vid en resistans på t.ex. \unit[10]{\si{\Mohm}} blir felvärdet enligt Ekvation \ref{eq:err2}
+
+\begin{align}
+\text{Felvärde }{R}_{last}(\si{\percent}) &= \frac{(\frac{1}{\frac{1}{R_{3}}+\frac{1}{R{M_{2}}}}) - R_{3}}{R_{3}} \times 100 \label{eq:err2}\\
+&= \frac{(\frac{1}{\frac{1}{\unit[1]{\si{\Mohm}}}+\frac{1}{\unit[10]{\si{\Mohm}}}}) - \unit[1]{\si{\Mohm}}}{\unit[1]{\si{\Mohm}}} \times 100\\
+&= 0,09 \%
+\end{align}
+
+
 
 \begin{figure}
 \centering
 \includegraphics[width=0.7\linewidth]{img/lab-03_5-schem}
 \caption[Kopplingsschema för mätning av tvåpol.]
-{Schematisk bild av uppkoppling vid mätning av EMK och inre resistans i en tvåpol.}
-\label{fig:lab-03_5-schem}
+{Koppling vid mätning av EMK och inre resistans i en tvåpol.}
+\label{fig:5-schem}
 \end{figure}
+
+\begin{longtable}[c]{@{}ccc@{}}
+    \toprule\addlinespace
+    \begin{tabular}{ll}$R_{3}$
+    \end{tabular} & \begin{tabular}{ll}$I_{M1}$
+\end{tabular} & \begin{tabular}{ll}$V_{M2}$
+\end{tabular}
+\\\addlinespace
+\midrule\endhead
+\unit[500]{\si{\ohm}} & \unit[16.38]{\si{\unit{\mA}}} & \unit[1.78]{\si{\volt}}
+\\\addlinespace
+\unit[600]{\si{\ohm}} & \unit[13.66]{\si{\unit{\mA}}} & \unit[1.766]{\si{\volt}}
+\\\addlinespace
+\unit[700]{\si{\ohm}} & \unit[11.725]{\si{\unit{\mA}}} & \unit[1.755]{\si{\volt}}
+\\\addlinespace
+\unit[800]{\si{\ohm}} & \unit[10.269]{\si{\unit{\mA}}} & \unit[1.744]{\si{\volt}}
+\\\addlinespace
+\unit[900]{\si{\ohm}} & \unit[9.1342]{\si{\unit{\mA}}} & \unit[1.737]{\si{\volt}}
+\\\addlinespace
+\unit[1]{\si{\kohm}} & \unit[8.260]{\si{\unit{\mA}}} & \unit[1.730]{\si{\volt}}
+\\\addlinespace
+\unit[2]{\si{\kohm}} & \unit[3.3319]{\si{\unit{\mA}}} & \unit[1.685]{\si{\volt}}
+\\\addlinespace
+\unit[3]{\si{\kohm}} & \unit[2.3805]{\si{\unit{\mA}}} & \unit[1.671]{\si{\volt}}
+\\\addlinespace
+\unit[4]{\si{\kohm}} & \unit[1.8525]{\si{\unit{\mA}}} & \unit[1.662]{\si{\volt}}
+\\\addlinespace
+\unit[5]{\si{\kohm}} & \unit[1.5176]{\si{\unit{\mA}}} & \unit[1.655]{\si{\volt}}
+\\\addlinespace
+\unit[6]{\si{\kohm}} & \unit[1.2858]{\si{\unit{\mA}}} & \unit[1.648]{\si{\volt}}
+\\\addlinespace
+\unit[7]{\si{\kohm}} & \unit[1.1159]{\si{\unit{\mA}}} & \unit[1.643]{\si{\volt}}
+\\\addlinespace
+\unit[8]{\si{\kohm}} & \unit[985.6]{\si{\unit{\uA}}} & \unit[1.637]{\si{\volt}}
+\\\addlinespace
+\unit[9]{\si{\kohm}} & \unit[882.5]{\si{\unit{\uA}}} & \unit[1.6304]{\si{\volt}}
+\\\addlinespace
+\unit[10]{\si{\kohm}} & \unit[799.2]{\si{\unit{\uA}}} & \unit[1.630]{\si{\volt}}
+\\\addlinespace
+\unit[20]{\si{\kohm}} & \unit[408.7]{\si{\unit{\uA}}} & \unit[1.605]{\si{\volt}}
+\\\addlinespace
+\unit[30]{\si{\kohm}} & \unit[275.3]{\si{\unit{\uA}}} & \unit[1.590]{\si{\volt}}
+\\\addlinespace
+\unit[40]{\si{\kohm}} & \unit[2077]{\si{\unit{\uA}}} & \unit[1.578]{\si{\volt}}
+\\\addlinespace
+\unit[50]{\si{\kohm}} & \unit[1667]{\si{\unit{\uA}}} & \unit[1.569]{\si{\volt}}
+\\\addlinespace
+\unit[60]{\si{\kohm}} & \unit[139.2]{\si{\unit{\uA}}} & \unit[1.567]{\si{\volt}}
+\\\addlinespace
+\unit[70]{\si{\kohm}} & \unit[496.]{\si{\unit{\uA}}} & \unit[1.556]{\si{\volt}}
+\\\addlinespace
+\unit[80]{\si{\kohm}} & \unit[104.8]{\si{\unit{\uA}}} & \unit[1.55]{\si{\volt}}
+\\\addlinespace
+\unit[90]{\si{\kohm}} & \unit[93.3]{\si{\unit{\uA}}} & \unit[1.545]{\si{\volt}}
+\\\addlinespace
+\unit[100]{\si{\kohm}} & \unit[84.0]{\si{\unit{\uA}}} & \unit[1.541]{\si{\volt}}
+\\\addlinespace
+\bottomrule
+\addlinespace
+\caption[]{Mätresultat för kretsen i Figur \ref{fig:5-schem}.}
+\label{emktable}
+\end{longtable}
 
 % TODO: Mät tvåpolens tomgångsspänning, Uab0, d.v.s. ställ Ry på sitt maximala värde.
 %       Minska Ry tills spänningen över Ry har minskat till 0.5.Uab0 (d.v.s hälften av
