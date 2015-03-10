@@ -22,3 +22,6 @@ Session.vim
 
 ### pdfTex ###
 texput.log
+build/*
+misc/*.pdf
+img/*.pdf
