@@ -320,7 +320,7 @@ Men eftersom att den maximala resistansen som används i det här fallet är
 \unit[100]{\si{\kohm}} och felvärdet enligt Ekvation \ref{eq:err3} då blir
 $\approx$ 0,0099\% kan belastningen från multimetern förbises.
 
-\par Spänningen vid tvåpolens "utgång" mäts ,
+\par Mätning på kopplingen ger att spänningen vid tvåpolens "utgång"
 $V_{AB}$ = \unit[7.16]{\si{\volt}}.
 \par Med $R_{3}$ ställd på sin maximala resistans är spänningen oförändrad.
 När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att
@@ -651,17 +651,28 @@ signal är det lämpligt att mäta periodtiden mellan två nollgenomgångspunkte
 därefter omvandla från period till frekvens.
 \par Om en signal upprepas inom två divisioner och \nicefrac{tid}{div} är ställd
 på \nicefrac{\unit[500]{\si{\us}}}{div}, fås en periodtid \unit[1]{\si{\ms}}
-och frekvensen kan beräknas $f = \frac{1}{\num{10e-3}} = \unit[1]{\si{\kHz}}$.
+och frekvensen kan beräknas $f = \frac{1}{\num{1e-3}} = \unit[1]{\si{\kHz}}$.
 
 \subsection{Kommentar}
 % ------------------------------------------------------------------------------
 Oscilloskopet visar sannolikt det noggrannaste värdet för signalens frekvens.
 Däremot är multimetern troligtvis noggrannare vid mätning av RMS-värde.
-Särskilt den använda multimetern HP34401A har så kallad \emph{true RMS}-funktionalitet
-vilket möjliggör mätning av signaler av signaler med godtycklig vågform.
+Den använda multimetern HP34401A har så kallad \emph{true RMS}-funktionalitet
+vilket möjliggör mätning av signaler av signaler med godtycklig vågform. Den är
+därför med största sannolikhet det mest precisa instrumentet för att mäta RMS
+i experimentet.
 \par I enklare multimeters uppskattas ofta RMS-värdet genom att den uppmätta
 signalen antas vara sinusformad och omvandlingen sker med helvågslikriktning,
 toppvärdesdetektion och multiplikation med konstanten $\frac{1}{\sqrt{2}}$.
+\par Vi kan vara relativt säkra på att den frekvens och amplitud som ställs in
+på signalgeneratorn är den som faktiskt finns vid signalgeneratorns utgång,
+detta till följd av att signalgeneratorn är digital och genererar signalerna
+med en DAC. En analog signalgenerator uppvisar en stor intolerans för
+temperaturförändringar och många av komponenters icke-ideala egenskaper
+påverkar stabilitet och precision.  Kalibrering är mycket viktigare för ett
+analogt instrument. Det digitala instrumentets analoga signalväg, från
+D/A-omvandlaren genom en drivförstärkare till utgången, är förhållandevis kort
+och några eventuella fel kan kalibreras bort genom kompensationer i mjukvaran.
 
 \pagebreak
 
