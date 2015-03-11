@@ -2,7 +2,7 @@
 *.bak
 *.bck
 *.kicad_pcb-bak
-kicad/*.svg
+*.svg
 
 
 ### Linux ###
