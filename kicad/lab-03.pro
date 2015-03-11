@@ -1,4 +1,4 @@
-update=tis 10 mar 2015 17:27:25
+update=ons 11 mar 2015 20:49:01
 version=1
 last_client=kicad
 [cvpcb]
@@ -25,8 +25,6 @@ SolderMaskMinWidth=0.000000000000
 DrawSegmentWidth=0.200000000000
 BoardOutlineThickness=0.100000000000
 ModuleOutlineThickness=0.150000000000
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=/home/spock/kicad/jonas-custom/jonas/library
@@ -105,3 +103,5 @@ RptD_X=0
 RptD_Y=100
 RptLab=1
 LabSize=60
+[general]
+version=1
