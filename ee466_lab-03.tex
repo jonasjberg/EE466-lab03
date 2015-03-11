@@ -338,7 +338,51 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
 % ==============================================================================
 \section{Karakteristik hos en lysdiod}\label{}
 % ==============================================================================
-% TODO: Rita grafen I=f(U)! Kommentera!
+För att undersöka \nicefrac{I}{V}-karakteristiken hos en lysdiod behövs kännedom
+om spänningen över lysdioden, $V_{LED}$ samt strömmen genom lysdioden, $I_{LED}$.
+\par Kretsen i Figur \ref{fig:6-schem} konstruerades på en kopplingsplatta.
+En röd lysdiod användes, vi kan anta att det röda ljusets våglängd är cirka
+\unit[660]{\si{\nm}} och därmed förvänta oss ett framspänningsfall på
+cirka \unit[1.8]{\si{\volt}} vid \unit[20]{\si{\mA}}. Framspänningsfallet
+$V_{f}$ brukar i datablad ofta specificeras vid \unit[20]{\si{\mA}}, som också
+många gånger är lysdiodens rekommenderade maxström.
+\par Resistorn $R_{2}$ förhindrar strömmen $I_{LED}$ att bli alldeles för stor
+i det fall att resistansen hos dekadresistorn $R_{1}$ är ställd till ett
+lågt värde eller direkt kortslutning. Den högsta ström som kan flyta genom 
+kretsen uppskattas i Ekvation \ref{eq:ledmax} till ett värde under den 
+specificerade maxgränsen på \unit[20]{\si{\mA}}.
+
+% (10-1,8)/470 = 0,01744680851063829787
+\begin{equation}\label{eq:ledmax}
+\begin{split}
+I_{LED_{max}} = \frac{V_{1} - V_{D1}}{R_{2}}\\
+I_{LED_{max}} = \frac{\unit[10]{\si{\volt}} - \unit[1.8]{\si{\volt}}}{\unit[470]{\si{\ohm}}}\\
+I_{LED_{max}} = \unit[17.4]{\si{\mA}}
+\end{split}
+\end{equation}
+
+\par Lysdioden är precis som namnet antyder en typ av diod och uppvisar en
+typisk diodkarakteristik, där strömmen $I_{diod}$ är näst intill obefintlig då
+$V_{diod} < V_{f}$ för att sedan öka exponentiellt efter det att
+$V_{diod} \ge V_{f}$ och dioden börjar leda.
+Förhållandet mellan spänning och ström är olinjärt, $\Delta I$ är mycket stort
+över ett mycket litet område av $\Delta V$.
+\par Mätresultaten presenteras i Tabell \ref{6-table}, Figur 
+\ref{fig:led-data-graf} och Figur \ref{fig:led-data-graf2} under sektion 
+\ref{led-results}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/6-schem}
+    \caption[Bestämning av I/V-karakteristik hos LED]
+    {Labbkoppling för att bestämma I/V-karakteristik hos LED}
+    \label{fig:6-schem}
+\end{figure}
+
+
+\subsection{Mätresultat}\label{led-results}
+% ------------------------------------------------------------------------------
+
 
 \begin{longtable}[c]{@{}ccc@{}}
     \toprule\addlinespace
@@ -399,7 +443,7 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
 \bottomrule
 \addlinespace
 \caption[]{Mätresultat för kretsen i Figur \ref{fig:5-schem}.}
-\label{emktable}
+\label{6-table}
 \end{longtable}
 
 %\subsection{}
@@ -408,7 +452,7 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
     \centering
     \includegraphics[width=\linewidth]{img/6-led_data-graf}
     \caption[Spänning och ström genom LED som funktion av serieresistans]
-    {Ström genom LED som en funktion av spänning över LED}
+    {Ström genom och spänning över LED som en funktion av resistans}
     \label{fig:led-data-graf}
 \end{figure}
 
@@ -416,7 +460,7 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
     \centering
     \includegraphics[width=\linewidth]{img/6-led_data-graf2}
     \caption[Ström genom LED som funktion av spänning över LED]
-    {Ström genom och spänning över LED som en funktion av resistans}
+    {Ström genom LED som en funktion av spänning över LED}
     \label{fig:led-data-graf2}
 \end{figure}
 
