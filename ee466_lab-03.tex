@@ -736,12 +736,12 @@ Ramp     & 1 & 0.5778 &  2.11
 \label{7tabell}
 \end{longtable}
 
+
 % ==============================================================================
 % SECTION: 8 STUDIUM AV FREKVENSGÅNG I EN REAKTIV KRETS
 % ==============================================================================
 \section{Studium av frekvensgång i en reaktiv krets}\label{}
 % ==============================================================================
-% TODO: Kopplingsschema.
 Kretsen funnen i figur \ref{fig:8-schem} kopplades upp.
 \begin{figure}[htbp]
     \centering
@@ -749,6 +749,8 @@ Kretsen funnen i figur \ref{fig:8-schem} kopplades upp.
     \caption{Reaktiv krets.}
     \label{fig:8-schem}
 \end{figure}
+
+
 \subsection{Mätresultat}\label{}
 % ------------------------------------------------------------------------------
 % TODO: + Gör upp en tabell som för varje frekvens anger
@@ -756,7 +758,9 @@ Kretsen funnen i figur \ref{fig:8-schem} kopplades upp.
 %         - amplituden hos spänningen över den studerade kondensatorn
 %         - kvoten mellan den senare amplituden och den tidigare
 %         - samt om fasförskjutning förekommer.
+
 Frekvensen varierades mellan 100 \si{\hertz} och 1900 \si{\hertz} i steg om 200 \si{\hertz} med en konstant spänning på tongeneratorn; $2.09\si{\volt}$. Tabell \ref{8a-table} presenterar resultatet.
+
 \begin{longtable}[c]{@{}ccccc@{}}
     \toprule\addlinespace
     \begin{tabular}{ll}$Frekvens, \si{\hertz}$
@@ -791,12 +795,14 @@ Frekvensen varierades mellan 100 \si{\hertz} och 1900 \si{\hertz} i steg om 200 
 \caption[]{Mätresultat för kretsen i Figur \ref{fig:8-schem}.}
 \label{8a-table}
 \end{longtable}
+
+
 \subsection{Teoretisk beräkning}\label{}
 % ------------------------------------------------------------------------------
-% TODO: Kontrollera dina resultat genom att utnyttja följande formel: 
 Följande formel används för att teoretiskt beräkna kvoten mellan kondensatorns spänning och tongeneratorns:\\[2mm]
 $\frac{u_{c}}{u_{TG}} = \frac{1}{\sqrt{1+(2 \pi \times f \times R \times C)^2}}$\\[2mm]
 Det teoretiska resultatet redovisas i tabell \ref{8b-table}.
+
 \begin{longtable}[c]{@{}cc@{}}
     \toprule\addlinespace
     \begin{tabular}{ll}$Frekvens, \si{\hertz}$
@@ -829,15 +835,19 @@ Det teoretiska resultatet redovisas i tabell \ref{8b-table}.
 \caption[]{Teoretisk beräkning för kretsen i Figur \ref{fig:8-schem}.}
 \label{8b-table}
 \end{longtable}
+
+
 \subsection{Kommentar}\label{}
 % ------------------------------------------------------------------------------
 % TODO: Jämföra teori och upmätt
+
 För att beräkna felmarginalen för uppmätt och beräknat värde i kvoten\\[2mm]
 $\frac{u_{c}}{u_{TG}}$\\[2mm]
 används följande formel:\\[2mm]
 %|teoretisk-uppmätt|/uppmätt * 100
 $\frac{|\text{teoretiskt värde - uppmätt värde}|}{\text{uppmätt värde}}\times 100$\\[2mm]
 Tabell \ref{8c-table} beskriver detta.
+
 \begin{longtable}[c]{@{}ccccc@{}}
     \toprule\addlinespace
     \begin{tabular}{ll}Frekvens, $\si{\hertz}$
@@ -872,6 +882,8 @@ Tabell \ref{8c-table} beskriver detta.
 \caption[]{Felmarginal.}
 \label{8c-table}
 \end{longtable}
+
+
 % ==============================================================================
 % SECTION: 9 MÄTNING AV FASFÖRSKJUTNING I EN REAKTIV KRETS
 % ==============================================================================
