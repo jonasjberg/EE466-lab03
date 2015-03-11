@@ -383,7 +383,6 @@ Förhållandet mellan spänning och ström är olinjärt, $\Delta I$ är mycket 
 \subsection{Mätresultat}\label{led-results}
 % ------------------------------------------------------------------------------
 
-
 \begin{longtable}[c]{@{}ccc@{}}
     \toprule\addlinespace
     \begin{tabular}{ll}$R_{3}$
@@ -446,8 +445,6 @@ Förhållandet mellan spänning och ström är olinjärt, $\Delta I$ är mycket 
 \label{6-table}
 \end{longtable}
 
-%\subsection{}
-% ------------------------------------------------------------------------------
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{img/6-led_data-graf}
@@ -463,6 +460,27 @@ Förhållandet mellan spänning och ström är olinjärt, $\Delta I$ är mycket 
     {Ström genom LED som en funktion av spänning över LED}
     \label{fig:led-data-graf2}
 \end{figure}
+
+
+\subsection{Kommentar}
+% ------------------------------------------------------------------------------
+Mätningarna stämmer överens med antagandet att lysdiodens framspänningsfall
+$V_{f}$ är omkring \unit[1.8]{\si{\volt}} då $I_{LED} \approx \unit[20]{\si{\mA}}$.
+\par Lysdioder drivs som lämpligast med en låg spänning och en hög ström, ofta
+används kretsar som levererar en konstant ström, \emph{constant current source}.
+till exempel kretsen i Figur \ref som är en spänningsstyrd strömgenerator, som driver
+flera lysdioder med samma ström, med ett linjärt förhållande mellan styrspänning
+och diodström. Kretsen användes för att besvara en förfrågan om hur flera LEDs
+kan drivas med samma ström under en enkel $+9V$ spänningsmatning.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/LED-driver}
+    \caption[Spänningsstyrd LED-drivare för osymmetrisk spänningsmatning]
+    {Exempel på spänningsstyrd LED-drivare för osymmetrisk spänningsmatning}
+    \label{fig:led-data-graf2}
+\end{figure}
+
 
 % ==============================================================================
 % SECTION: 7 MÄTNING AV VÄXELSPÄNNING MED UNIVERSALINSTRUMENT OCH OSCILLOSKOP
