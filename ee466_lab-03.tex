@@ -2,12 +2,12 @@
 % LAB 167
 % MÄTNING PÅ ELEKTRISKA KRETSAR
 % --------------------------
-% Last updated <2015-03-10> 
+% Last updated <2015-03-10>
 %
 % Author:
 % Jonas Sjöberg     <tel12jsg@student.hig.se>
 % Oscar Wallberg    <tco13owg@student.hig.se>
-% 
+%
 % License:
 % Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 % See LICENSE.md for full licensing information.
@@ -34,7 +34,7 @@
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 % ==============================================================================
-% DOCUMENT METADATA 
+% DOCUMENT METADATA
 % ==============================================================================
 \title{EE466 \\ Lab 167 \\ Mätning på elektriska kretsar}
 
@@ -85,7 +85,7 @@
 \newpage
 
 % ==============================================================================
-% SECTION: INTRODUKTION 
+% SECTION: INTRODUKTION
 % ==============================================================================
 \section{Introduktion}\label{setup}
 % ==============================================================================
@@ -310,37 +310,33 @@ högre resistansvärden.  Felvärdet kan beräknas med Ekvation \ref{eq:err1} so
 vid en högre resistans enligt \ref{eq:err2} blir 0,09\%, vilket klart påverkar
 mätresultatet.  Men eftersom den maximala resistansen som används är
 \unit[100]{\si{\kohm}} så kan belastning från multimetern förbises.
-\par Utan belastning är spänningen vid tvåpolens "utgång", 
-$V_{AB}$ = \unit[7.16]{\si{\volt}}. 
+\par Utan belastning är spänningen vid tvåpolens "utgång",
+$V_{AB}$ = \unit[7.16]{\si{\volt}}.
 \par Med $R_{3}$ ställd på sin maximala resistans är spänningen oförändrad.
-När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att sjunka.
-\par Halva tomgångsspänningen $\frac{V_{AB}}{2} = \unit[3.58]{\si{\volt}}$ avläses
-vid en last av $R_{3}$ = \unit[341]{\si{\ohm}}. 
-Strömmen genom lasten är då $I = \unit[10.531]{\si{\mA}}$.
+När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att
+sjunka.
+\par Halva tomgångsspänningen $\frac{V_{AB}}{2} = \unit[3.58]{\si{\volt}}$
+avläses vid en last av $R_{3}$ = \unit[341]{\si{\ohm}}.  Strömmen genom lasten
+är då $I = \unit[10.531]{\si{\mA}}$.
 
-% Obelastad polspänning  Vab = 7.16V
-
-
-% Förändring i procent;
 % fel(%) = [(uppmätt - förväntat) / förväntat] * 100
 % (((1/((1/x)+(1/(10e6))))-x)/x)*100
 \begin{equation}\label{eq:err1}
-\text{Felvärde}(\si{\percent}) = 
+\text{Felvärde}(\si{\percent}) =
 \frac{\text{Uppmätt värde} - \text{Förväntat värde}}{\text{Förväntat värde}} \times 100
 \end{equation}
 
-Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation \ref{eq:err2}.
-\par Ett felvärde på 0,09\% är utgör ett signifikant mätfel. I det här fallet
-är lastresistansen som effektivt parallellkopplas med multimetern mycket lägre än
-\unit[1]{\si{\Mohm}} och mätfelet blir inte fullt så allvarligt.
+Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation
+\ref{eq:err2}.  \par Ett felvärde på 0,09\% är utgör ett signifikant mätfel. I
+det här fallet är lastresistansen som effektivt parallellkopplas med
+multimetern mycket lägre än \unit[1]{\si{\Mohm}} och mätfelet blir inte fullt
+så allvarligt.
 
 \begin{align}
 \text{Felvärde }{R}_{last}(\si{\percent}) &= \frac{(\frac{1}{\frac{1}{R_{3}}+\frac{1}{R{M_{2}}}}) - R_{3}}{R_{3}} \times 100 \label{eq:err2}\\
 &= \frac{(\frac{1}{\frac{1}{\unit[1]{\si{\Mohm}}}+\frac{1}{\unit[10]{\si{\Mohm}}}}) - \unit[1]{\si{\Mohm}}}{\unit[1]{\si{\Mohm}}} \times 100\\
 &= 0,09 \%
 \end{align}
-
-
 
 \begin{figure}
 \centering
@@ -350,11 +346,11 @@ Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation 
 \label{fig:5-schem}
 \end{figure}
 
-\pagebreak
 
 \subsection{Teoretisk härledning med Thévenins teorem}
 % ------------------------------------------------------------------------------
-Kretsen som levererar spänningen ritas om till den i Figur \ref{fig:5-thevenin-schem}.
+Kretsen som levererar spänningen ritas om till den i Figur
+\ref{fig:5-thevenin-schem}.
 
 \begin{figure}
     \centering
@@ -364,8 +360,8 @@ Kretsen som levererar spänningen ritas om till den i Figur \ref{fig:5-thevenin-
     \label{fig:5-thevenin-schem}
 \end{figure}
 
-Den obelastade "tomgångsspänningen" mellan punkterna A och B, $V_{AB}$ beräknas enligt
-Ekv. \ref{eq:thev1}.
+Den obelastade "tomgångsspänningen" mellan punkterna A och B, $V_{AB}$ beräknas
+enligt Ekv. \ref{eq:thev1}.
 % 10*(1,2e3/(470+1,2e3)) = 7,18562874251497005988
 \begin{equation}\label{eq:thev1}
 \begin{split}
@@ -387,8 +383,8 @@ Kretsen blir då den i Figur \ref{fig:5-thevenin-schem2}.
     \label{fig:5-thevenin-schem2}
 \end{figure}
 
-Den inre resistansen utgörs av parallellkopplingen $R_{1}$ och $R_{2}$ och beräknas enligt 
-Ekv. \ref{eq:thev2}. 
+Den inre resistansen utgörs av parallellkopplingen $R_{1}$ och $R_{2}$ och
+beräknas enligt Ekv. \ref{eq:thev2}.
 % (470*1200)/(470+1200) = 337,72455089820359281437
 \begin{equation}\label{eq:thev2}
 \begin{split}
@@ -398,8 +394,9 @@ R_{th} = \unit[337,72]{\si{\ohm}}
 \end{split}
 \end{equation}
 
-De teoretiska värdena för Théveninekvivalensen i \ref{eq:thev3} används i Figur 
-\ref{fig:5-thevenin-schem3} som har ett beteende ekvivalent med den ursprungliga tvåpolen.
+De teoretiska värdena för Théveninekvivalensen i \ref{eq:thev3} används i Figur
+\ref{fig:5-thevenin-schem3} som har ett beteende ekvivalent med den
+ursprungliga tvåpolen.
 
 \begin{align}\label{eq:thev3}
 V_{AB} &= \unit[7,185]{\si{\volt}}\\
@@ -421,13 +418,56 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
 % ==============================================================================
 \section{Karakteristik hos en lysdiod}\label{}
 % ==============================================================================
-% TODO: Rita grafen I=f(U)! Kommentera!
+För att undersöka \nicefrac{I}{V}-karakteristiken hos en lysdiod behövs kännedom
+om spänningen över lysdioden, $V_{LED}$ samt strömmen genom lysdioden, $I_{LED}$.
+\par Kretsen i Figur \ref{fig:6-schem} konstruerades på en kopplingsplatta.
+En röd lysdiod användes, vi kan anta att det röda ljusets våglängd är cirka
+\unit[660]{\si{\nm}} och därmed förvänta oss ett framspänningsfall på
+cirka \unit[1.8]{\si{\volt}} vid \unit[20]{\si{\mA}}. Framspänningsfallet
+$V_{f}$ brukar i datablad ofta specificeras vid \unit[20]{\si{\mA}}, som också
+många gånger är lysdiodens rekommenderade maxström.
+\par Resistorn $R_{2}$ förhindrar strömmen $I_{LED}$ att bli alldeles för stor
+i det fall att resistansen hos dekadresistorn $R_{1}$ är ställd till ett
+lågt värde eller direkt kortslutning. Den högsta ström som kan flyta genom 
+kretsen uppskattas i Ekvation \ref{eq:ledmax} till ett värde under den 
+specificerade maxgränsen på \unit[20]{\si{\mA}}.
+
+% (10-1,8)/470 = 0,01744680851063829787
+\begin{equation}\label{eq:ledmax}
+\begin{split}
+I_{LED_{max}} = \frac{V_{1} - V_{D1}}{R_{2}}\\
+I_{LED_{max}} = \frac{\unit[10]{\si{\volt}} - \unit[1.8]{\si{\volt}}}{\unit[470]{\si{\ohm}}}\\
+I_{LED_{max}} = \unit[17.4]{\si{\mA}}
+\end{split}
+\end{equation}
+
+\par Lysdioden är precis som namnet antyder en typ av diod och uppvisar en
+typisk diodkarakteristik, där strömmen $I_{diod}$ är näst intill obefintlig då
+$V_{diod} < V_{f}$ för att sedan öka exponentiellt efter det att
+$V_{diod} \ge V_{f}$ och dioden börjar leda.
+Förhållandet mellan spänning och ström är olinjärt, $\Delta I$ är mycket stort
+över ett mycket litet område av $\Delta V$.
+\par Mätresultaten presenteras i Tabell \ref{6-table}, Figur 
+\ref{fig:led-data-graf} och Figur \ref{fig:led-data-graf2} under sektion 
+\ref{led-results}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{img/6-schem}
+    \caption[Bestämning av I/V-karakteristik hos LED]
+    {Labbkoppling för att bestämma \nicefrac{I}{V}-karakteristik för en LED}
+    \label{fig:6-schem}
+\end{figure}
+
+
+\subsection{Mätresultat}\label{led-results}
+% ------------------------------------------------------------------------------
 
 \begin{longtable}[c]{@{}ccc@{}}
     \toprule\addlinespace
     \begin{tabular}{ll}$R_{3}$
-    \end{tabular} & \begin{tabular}{ll}$I_{M1}$
-\end{tabular} & \begin{tabular}{ll}$V_{M2}$
+    \end{tabular} & \begin{tabular}{ll}$I_{LED}$
+\end{tabular} & \begin{tabular}{ll}$V_{LED}$
 \end{tabular}
 \\\addlinespace
 \midrule\endhead
@@ -482,8 +522,45 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
 \bottomrule
 \addlinespace
 \caption[]{Mätresultat för kretsen i Figur \ref{fig:5-schem}.}
-\label{emktable}
+\label{6-table}
 \end{longtable}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/6-led_data-graf}
+    \caption[Spänning och ström genom LED som funktion av serieresistans]
+    {Ström genom och spänning över LED som en funktion av resistans}
+    \label{fig:led-data-graf}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/6-led_data-graf2}
+    \caption[Ström genom LED som funktion av spänning över LED]
+    {Ström genom LED som en funktion av spänning över LED}
+    \label{fig:led-data-graf2}
+\end{figure}
+
+
+\subsection{Kommentar}
+% ------------------------------------------------------------------------------
+Mätningarna stämmer överens med antagandet att lysdiodens framspänningsfall
+$V_{f}$ är omkring \unit[1.8]{\si{\volt}} då $I_{LED} \approx \unit[20]{\si{\mA}}$.
+\par Lysdioder drivs som lämpligast med en låg spänning och en hög ström, ofta
+används kretsar som levererar en konstant ström, \emph{constant current source}.
+till exempel kretsen i Figur \ref som är en spänningsstyrd strömgenerator, som driver
+flera lysdioder med samma ström, med ett linjärt förhållande mellan styrspänning
+och diodström. Kretsen användes för att besvara en förfrågan om hur flera LEDs
+kan drivas med samma ström under en enkel $+9V$ spänningsmatning.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/LED-driver}
+    \caption[Spänningsstyrd LED-drivare för osymmetrisk spänningsmatning]
+    {Exempel på spänningsstyrd LED-drivare för osymmetrisk spänningsmatning}
+    \label{fig:led-data-graf2}
+\end{figure}
+
 
 % ==============================================================================
 % SECTION: 7 MÄTNING AV VÄXELSPÄNNING MED UNIVERSALINSTRUMENT OCH OSCILLOSKOP
@@ -547,11 +624,11 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
 
 \subsection{Mätresultat}\label{}
 % ------------------------------------------------------------------------------
-% TODO: Notera resonansfrekvensen. 
+% TODO: Notera resonansfrekvensen.
 
 \subsection{Kommentar}\label{}
 % ------------------------------------------------------------------------------
-% TODO: + Kommentera följande:                                                            
+% TODO: + Kommentera följande:
 %          - Förekommer fasförskjutning mellan uTG och uR vid denna frekvens?
 %          - Ändrar fasen sig om du varierar frekvensen kring den
 %            uppmätta resonansfrekvensen?  I så fall hur?

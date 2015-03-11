@@ -2,6 +2,7 @@
 *.bak
 *.bck
 *.kicad_pcb-bak
+*.svg
 
 
 ### Linux ###
@@ -22,3 +23,6 @@ Session.vim
 
 ### pdfTex ###
 texput.log
+build/*
+misc/*.pdf
+img/*.pdf
