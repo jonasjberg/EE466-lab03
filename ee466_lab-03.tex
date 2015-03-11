@@ -170,7 +170,7 @@ Strömmen som mättes vid spänningskällan var $33 \si{\milli\ampere}$ och str�
 % ==============================================================================
 % TODO: Kopplingsschema.
 Två resistorer kopplades enligt figur \ref{fig:3-mm-schem}.
-Sedan valdes en lämplig spänning för spänningskällan.
+Sedan valdes 5 \si{\volt} för spänningskällan.
 
 \begin{figure}[htbp]
     \centering
@@ -181,32 +181,112 @@ Sedan valdes en lämplig spänning för spänningskällan.
 \subsection{Mätresultat}\label{}
 % ------------------------------------------------------------------------------
 % TODO: Mät de markerade strömmarna
-
+$I_{1} = 47.35 \si{\milli\ampere}\\
+I_{2} = 22.453 \si{\milli\ampere}\\
+I = 72\si{\milli\ampere}$
 \subsection{Kommentar}\label{}
 % ------------------------------------------------------------------------------
 % TODO: Kommentera utgående från Kirchhoffs 1:a lag.
-
-
+Kirchhoff's 1:a lag:
+\begin{quote}
+Summan av alla elektriska strömmar som flyter till en nod är lika med summan av alla strömmar som flyter från noden, eller\\
+$i_1 + i_2 \ldots + i_n = 0$\\
+där $i_k$ betecknar en nodström.
+\end{quote}
+Detta ger\\
+$I = I_{1} + I_{2}\\
+I = 47.35 + 22.453 = 69.803\si{\milli\ampere}$\\
+vilket ger en procentuell felmarginal på $\frac{72-69.803}{69.803}\times 100 = 3.147 \%$.
 % ==============================================================================
 % SECTION: 4 MÄTNING AV RESISTANS
 % ==============================================================================
 \section{Mätning av resistans}\label{}
 % ==============================================================================
 % TODO: Kopplingsschema.
+Kretsarna funna i figur \ref{fig:4-mm-schem} kopplades upp. De uppmätta resistanserna var följande:\\
+$R_{1} = 154.4\ohm\\
+R_{2} = 177.75\ohm\\
+R_{3} = 328\ohm\\
+R_{4} = 118.3\ohm\\
+R_{5} = 99.9\ohm$
 
+\begin{figure}[htbp]
+    \centering
+        \includegraphics[scale=0.7]{misc/krets4.png}
+    \caption{Resistorkretsar.}
+    \label{fig:4-mm-schem}
+\end{figure}
 \subsection{Mätresultat}\label{}
 % ------------------------------------------------------------------------------
 % TODO: Mät resistansen mellan A och B i nedanstående kretsar.
-
+\subsubsection{A}
+$154.4 \ohm$
+\subsubsection{B}
+$331.7 \ohm$
+\subsubsection{C}
+$164.62 \ohm$
+\subsubsection{D}
+$283.52 \ohm$
+\subsubsection{E}
+$383.92 \ohm$
 \subsection{Teoretisk beräkning}\label{}
 % ------------------------------------------------------------------------------
 % TODO: För varje mätning skall du verifiera resultatet med en teoretisk beräkning.
+\subsubsection{A}
+Resistansen $R_A$ i A utgörs av ett enda motstånd och kan utläsas
+direkt till $R_{A} = R_{1} = $\unit[154.4]{\ohm}
 
-%\subsection{Kommentar}\label{}
+\subsubsection{B}
+Resistansen $R_{B}$ i B är teoretiskt;
+% 180+150 = 330
+\begin{align*}
+R_{B}    &= R_{1} + R_{2}                        \\
+         &= \unit[154.4]{\ohm} + \unit[177.75]{\ohm}  \\
+         &= \unit[332.15]{\ohm}                     \\
+\end{align*}
+
+\subsubsection{C}
+Resistansen $R_{C}$ i C är teoretiskt;
+% 1/((1/330)+(1/(180+150))) = 165
+\begin{align*}
+R_{C}   &= \frac{1}{\frac{1}{R_{3}} + \frac{1}{R_{1} + R_{2}}} \\
+        &= \frac{1}{\frac{1}{328\unit{\ohm}} + \frac{1}{\unit[154.4]{\ohm} + \unit[177.75]{\ohm}}} \\
+        &= \unit[165.03]{\ohm}
+\end{align*}
+
+\subsubsection{D}
+Resistansen $R_{D}$ i D är teoretiskt;
+% 1/((1/330)+(1/(180+150)))+120 = 285
+\begin{align*}
+R_{D}   &= \frac{1}{\frac{1}{R_{3}} + \frac{1}{R_{1} + R_{2}}} + R_{4} \\
+&= \frac{1}{\frac{1}{328\unit{\ohm}} + \frac{1}{\unit[154.4]{\ohm} + \unit[177.75]{\ohm}}} + \unit[118.3]{\ohm} \\
+&= \unit[283.33]{\ohm}
+\end{align*}
+
+\subsubsection{E}
+Resistansen $R_{E}$ i E är teoretiskt;
+% 1/((1/330)+(1/(180+150)))+120+100 = 385
+\begin{align*}
+R_{E}   &= \frac{1}{\frac{1}{R_{3}} + \frac{1}{R_{1} + R_{2}}} + R_{4} + R_{5} \\
+&= \frac{1}{\frac{1}{328\unit{\ohm}} + \frac{1}{\unit[154.4]{\ohm} + \unit[177.75]{\ohm}}} + \unit[118.3]{\ohm} + \unit[99.9]{\ohm}\\
+&= \unit[383.23]{\ohm}
+\end{align*}
+\subsection{Kommentar}\label{}
 % ------------------------------------------------------------------------------
 % TODO: Kommentar på skillnader mellan mätresultat och beräkning?
-
-
+Följande formel används för att beräkna den procentuella felmarginalen: \\[2mm]
+%|teoretisk-uppmätt|/uppmätt * 100
+$\frac{|\text{teoretiskt värde - uppmätt värde}|}{\text{uppmätt värde}}\times 100$
+\subsubsection{A}
+Den teoretiska beräkningen och den uppmätta stämmer överens; 154.4 \ohm.
+\subsubsection{B}
+$\frac{|332.15 - 331.7|}{331.7}\times 100 = 0.136\%$
+\subsubsection{C}
+$\frac{|165.03 - 164.62|}{164.62}\times 100 = 0.231\%$
+\subsubsection{D}
+$\frac{|283.33 - 283.52|}{283.52}\times 100 = 0.067\%$
+\subsubsection{E}
+$\frac{|383.23 - 383.92|}{383.92}\times 100 = 0.18\%$
 % ==============================================================================
 % SECTION: 5 MÄTNING AV EMK OCH INRE RESISTANS I EN TVÅPOL
 % ==============================================================================
