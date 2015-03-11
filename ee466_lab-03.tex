@@ -567,41 +567,82 @@ kan drivas med samma ström under en enkel $+9V$ spänningsmatning.
 % ==============================================================================
 \section{Mätning av växelspänning med universalinstrument och oscilloskop}
 % ==============================================================================
-För att generera en växelspänning används signalgeneratorn HP33120A, vars utgång
-kopplas till en BNC T-koppling, som förgrenar signalen till både multimetern HP34401A
-och oscilloskopet. En adapter används för att ansluta BNC T-kopplingen till
-vanliga "banan" labsladdar som kopplas till multimetern.
-\par Multimetern ställs för att mäta $V_{AC}$ RMS med automatisk inställning
-av mätområde. På oscilloskopet används funktioner under \emph{measure} för att
-direkt visa signalens amplitud i $V_{pp}$. 
+För att generera en växelspänning används signalgeneratorn HP33120A, vars
+utgång kopplas till en BNC T-koppling, som förgrenar signalen till både
+multimetern HP34401A och oscilloskopet. En adapter används för att ansluta BNC
+T-kopplingen till vanliga "banan" labsladdar som kopplas till multimetern. Se
+Figur \ref{fig:foto1} och Figur \ref{fig:foto2}.
+\par Signalgeneratorn konfigureras för att generera en sinusformad signal med
+en frekvens på \unit[1]{\si{\kHz}} och en amplitud på $\nicefrac{V_{pp}}{2}$.
+Signalgeneratorn anger amplitud som halva topp-till-topp-värdet.
+\par Multimetern ställs för att mäta $V_{AC}$ RMS med
+automatisk inställning av mätområde. På oscilloskopet används funktioner under
+\emph{measure} för att direkt visa signalens amplitud i $V_{pp}$. Oscilloskopet
+visar signalens amplitud från topp-till-topp, det vill säga dubbla det hos
+signalgeneratorn.
 
-% Ställ in tongeneratorn (funktionsgeneratorn) på en sinusformad spänning med
-% frekvensen 1 kHz.  Mät signalen från tongeneratorn med ett multimeter inställt
-% för AC-mätning. Justera signalstorleken till 1 V.
-% 
-% + Beskriv nu vad du vet om signalen. Beskriv även vad du tror om signalen.
-% 
-% Mata även in signalen till ett oscilloskop och se till att du får en snygg,
-% stillastående bild av vågformen.  Se till att de svarta "banan"-anslutningarna
-% hos tongeneratorsladden och oscilloskopssladden alltid är kopplade till samma
-% punkt.  Ser signalen sinusformad ut?  Mät signalens amplitud (t. ex. genom att
-% mäta topp-till-toppvärdet och dela med 2, alltså
-% 
-% Upprepa mätningen för några andra spänningsvärden och beräkna varje gång kvoten
-% mellan amplitud (som mäts med oscilloskop) och spänningsvärde (som mäts med
-% multimeter).
-% 
-% + Förklara skillnaden mellan resultatet som mäts med multimeter och
-% det som mäts med oscilloskop.
-% 
-% Mät signalens frekvens med oscilloskopet, t. ex.  genom att först mäta dess
-% period. Eventuellt räknar oscilloskopet ut frekvensen åt dig.
-% 
-% + Beskriv nu vad du vet om signalen.
-% + Behöver du efter dessa mätningar förlita dig till tron?
-% 
-% Upprepa oscilloskopsmätningen för andra kurvformer, t.  ex. triangelvåg,
-% fyrkantsvåg, etc.
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/foto1}
+    \caption[]
+    {Multimeter och signalgenerator under mätning}
+    \label{fig:foto1}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{img/foto2}
+    \caption[]
+    {Multimeter och signalgenerator under mätning}
+    \label{fig:foto2}
+\end{figure}
+
+
+\subsection{Mätresultat}\label{}
+% ------------------------------------------------------------------------------
+Förhållandet mellan  $V_{AC}$ RMS och $V_{pp}$ kan skrivas som i Ekvation
+\ref{eq:rms-eq}.
+
+\begin{equation}\label{eq:rms-eq}
+\begin{split}
+V_{AC} RMS = \frac{V_{pp}}{2} \times \frac{1}{\sqrt{2}}\\
+\end{split}
+\end{equation}
+
+% 1/sqrt(2) = 0,7071067811865475244
+Anmärkningsvärt är förhållandet mellan de tre storheterna, $\nicefrac{V_{pp}}{2}$,
+$V_{AC}$ RMS och $V_{pp}$ i Ekvation \ref{eq:rms-eq2}. RMS-värdet förhåller sig
+till peak-värdet med en ratio av $\frac{1}{\sqrt{2}} \approx 0.707106 \ldots$
+
+\begin{align}\label{eq:rms-eq2}
+%\begin{split}
+\nicefrac{V_{pp}}{2} &= \frac{V_{pp}}{2}\\
+V_{AC}\text{ RMS} &= \frac{V_{pp}}{2} \times \frac{1}{\sqrt{2}}\\
+V_{pp} &= 2 \times (\nicefrac{V_{pp}}{2})
+%\end{split}
+\end{align}
+
+Signalens frekvens utläses direkt på oscilloskopskärmen. Den kan annars lätt
+härledas från sambandet $f = \frac{1}{T}$, där perioden $T$ kan utläsas direkt
+genom att uppskatta signalens storlek till skärmens rutnät och multiplicera med
+\nicefrac{tid}{div}, det vill säga värdet varje ruta motsvarar. För en sinusformad
+signal är det lämpligt att mäta periodtiden mellan två nollgenomgångspunkter och
+därefter omvandla från period till frekvens.
+\par Om en signal upprepas inom två divisioner och \nicefrac{tid}{div} är ställd
+på \nicefrac{\unit[500]{\si{\us}}}{div}, fås en periodtid \unit[1]{\si{\ms}}
+och frekvensen kan beräknas $f = \frac{1}{\num{10e-3}} = \unit[1]{\si{\kHz}}$.
+
+\subsection{Kommentar}
+% ------------------------------------------------------------------------------
+Oscilloskopet visar sannolikt det noggrannaste värdet för signalens frekvens.
+Däremot är multimetern troligtvis noggrannare vid mätning av RMS-värde.
+Särskilt den använda multimetern HP34401A har så kallad \emph{true RMS}-funktionalitet
+vilket möjliggör mätning av signaler av signaler med godtycklig vågform.
+\par I enklare multimeters uppskattas ofta RMS-värdet genom att den uppmätta
+signalen antas vara sinusformad och omvandlingen sker med helvågslikriktning,
+toppvärdesdetektion och multiplikation med konstanten $\frac{1}{\sqrt{2}}$.
+
+\pagebreak
 
 \begin{longtable}[c]{@{}cccc@{}}
     \toprule\addlinespace
