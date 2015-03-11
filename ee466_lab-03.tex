@@ -565,8 +565,16 @@ kan drivas med samma ström under en enkel $+9V$ spänningsmatning.
 % ==============================================================================
 % SECTION: 7 MÄTNING AV VÄXELSPÄNNING MED UNIVERSALINSTRUMENT OCH OSCILLOSKOP
 % ==============================================================================
-\section{Mätning av växelspänning med universalinstrument och oscilloskop}\label{}
+\section{Mätning av växelspänning med universalinstrument och oscilloskop}
 % ==============================================================================
+För att generera en växelspänning används signalgeneratorn HP33120A, vars utgång
+kopplas till en BNC T-koppling, som förgrenar signalen till både multimetern HP34401A
+och oscilloskopet. En adapter används för att ansluta BNC T-kopplingen till
+vanliga "banan" labsladdar som kopplas till multimetern.
+\par Multimetern ställs för att mäta $V_{AC}$ RMS med automatisk inställning
+av mätområde. På oscilloskopet används funktioner under \emph{measure} för att
+direkt visa signalens amplitud i $V_{pp}$. 
+
 % Ställ in tongeneratorn (funktionsgeneratorn) på en sinusformad spänning med
 % frekvensen 1 kHz.  Mät signalen från tongeneratorn med ett multimeter inställt
 % för AC-mätning. Justera signalstorleken till 1 V.
@@ -598,9 +606,9 @@ kan drivas med samma ström under en enkel $+9V$ spänningsmatning.
 \begin{longtable}[c]{@{}cccc@{}}
     \toprule\addlinespace
     \begin{tabular}{ll}Inställd\\vågform
-    \end{tabular} & \begin{tabular}{ll}Inställd\\amplitud
-\end{tabular} & \begin{tabular}{ll}Uppmätt med\\multimeter (VAC)
-\end{tabular} & \begin{tabular}{ll}Uppmätt med\\oscilloskop ($V_{pp}$)
+    \end{tabular} & \begin{tabular}{ll}Inställd\\amplitud\\($\nicefrac{V_{pp}}{2}$)
+\end{tabular} & \begin{tabular}{ll}Uppmätt med\\multimeter\\($V_{AC}$ RMS)
+\end{tabular} & \begin{tabular}{ll}Uppmätt med\\oscilloskop\\($V_{pp}$)
 \end{tabular}
 \\\addlinespace
 \midrule\endhead
@@ -649,7 +657,8 @@ Ramp     & 1 & 0.5778 &  2.11
 \\\addlinespace
 \bottomrule
 \addlinespace
-\caption{Jämförelse av olika spänningar, angett i Volt (\si{\volt})}
+\caption{Mätresultat för mätning av växelspänning med universalinstrument och
+    oscilloskop.}
 \label{vdivtable1}
 \end{longtable}
 
