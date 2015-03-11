@@ -292,25 +292,35 @@ $\frac{|383.23 - 383.92|}{383.92}\times 100 = 0.18\%$
 % ==============================================================================
 \section{Mätning av emk och inre resistans i en tvåpol}\label{measure_emk}
 % ==============================================================================
+
+\subsection{Mätning}
+% ------------------------------------------------------------------------------
 Dessa mätningar görs i syfte att undersöka konceptet tvåpol och demonstrera
 konceptet av att studera och räkna med reducering av komplexa nät med hjälp av
-Thévenins ekvivalens.  \par En så kallad experimentplatta eller "breadboard"
+Thévenins ekvivalens.
+\par En så kallad experimentplatta eller "breadboard"
 används för att konstruera kretsen som illustreras i Figur \ref{fig:5-schem}.
 Nätaggregatet $V_{1}$ är ett strömbegränsande laboratorieaggregat HP3631A.
 Spänningen $U$ mäts över dekadresistorn $R_{3}$ med bänkmultimetern $M_{2}$, en
 HP34401A.  Strömmen $I$ mäts genom att den handhållna multimetern Tenma 72-2050
-kopplas mellan punkten $A$ och $R_{3}$.  \par Källan som driver spänningen
-$V_{AB}$ utgörs av $V_{1}$, $R_{1}$ och $R_{2}$.  \par Lasten som är ansluten
-till utgången utgörs av dekadresistorn $R_{3}$.  Resistansen hos multimetern
-$M_{2}$ parallellkopplas med $R_{3}$ och påverkar således kretsen på ett
-oönskat sätt. Om man antar att $M_{2}$ har en inre resistans på
-\unit[10]{\si{\Mohm}} förändras lastens effektiva resistans. Förändringen är
-försumbar då $R_{3}$ har ett lågt värde men felvärdet blir klart påtagligt vid
-högre resistansvärden.  Felvärdet kan beräknas med Ekvation \ref{eq:err1} som
-vid en högre resistans enligt \ref{eq:err2} blir 0,09\%, vilket klart påverkar
-mätresultatet.  Men eftersom den maximala resistansen som används är
-\unit[100]{\si{\kohm}} så kan belastning från multimetern förbises.
-\par Utan belastning är spänningen vid tvåpolens "utgång",
+kopplas mellan punkten $A$ och $R_{3}$.
+\par Källan som driver spänningen $V_{AB}$ utgörs av $V_{1}$, $R_{1}$ och $R_{2}$.
+\par Lasten som är ansluten till utgången består av dekadresistorn $R_{3}$.
+Resistansen hos multimetern $M_{2}$ parallellkopplas med $R_{3}$ och påverkar
+således kretsen på ett oönskat sätt. Om man antar att $M_{2}$ har en inre
+resistans på \unit[10]{\si{\Mohm}} förändras lastens effektiva resistans inte
+märkbart, förutsatt att de uppmätta resistanserna är lågohmiga. Det förutsätts
+såklart då också att kretsen ifråga inte är alltför känslig för
+komponenttoleranser och yttre påverkan av till exempel mätinstrument.
+\par Generellt kan antas att förändringen är försumbar då $R_{3}$ har ett lågt
+värde men felvärdet blir klart påtagligt för högre värden av $R_{3}$.  Felvärdet
+kan beräknas med Ekvation \ref{eq:err1} som vid en högre resistans enligt
+\ref{eq:err2} blir 0,09\%, vilket är ett signifikant mätfel. 
+Men eftersom att den maximala resistansen som används i det här fallet är
+\unit[100]{\si{\kohm}} och felvärdet enligt Ekvation \ref{eq:err3} då blir
+$\approx$ 0,0099\% kan belastningen från multimetern förbises.
+
+\par Spänningen vid tvåpolens "utgång" mäts ,
 $V_{AB}$ = \unit[7.16]{\si{\volt}}.
 \par Med $R_{3}$ ställd på sin maximala resistans är spänningen oförändrad.
 När värdet hos $R_{3}$ sänks börjar spänningen vid tvåpolens utgång också att
@@ -326,16 +336,16 @@ avläses vid en last av $R_{3}$ = \unit[341]{\si{\ohm}}.  Strömmen genom lasten
 \frac{\text{Uppmätt värde} - \text{Förväntat värde}}{\text{Förväntat värde}} \times 100
 \end{equation}
 
-Vid en resistans på t.ex. \unit[1]{\si{\Mohm}} blir felvärdet enligt Ekvation
-\ref{eq:err2}.  \par Ett felvärde på 0,09\% är utgör ett signifikant mätfel. I
-det här fallet är lastresistansen som effektivt parallellkopplas med
-multimetern mycket lägre än \unit[1]{\si{\Mohm}} och mätfelet blir inte fullt
-så allvarligt.
-
 \begin{align}
 \text{Felvärde }{R}_{last}(\si{\percent}) &= \frac{(\frac{1}{\frac{1}{R_{3}}+\frac{1}{R{M_{2}}}}) - R_{3}}{R_{3}} \times 100 \label{eq:err2}\\
 &= \frac{(\frac{1}{\frac{1}{\unit[1]{\si{\Mohm}}}+\frac{1}{\unit[10]{\si{\Mohm}}}}) - \unit[1]{\si{\Mohm}}}{\unit[1]{\si{\Mohm}}} \times 100\\
 &= 0,09 \%
+\end{align}
+
+\begin{align}
+\text{Felvärde }{R}_{last}(\si{\percent}) &= \frac{(\frac{1}{\frac{1}{R_{3}}+\frac{1}{R{M_{2}}}}) - R_{3}}{R_{3}} \times 100 \label{eq:err3}\\
+&= \frac{(\frac{1}{\frac{1}{\unit[100]{\si{\kohm}}}+\frac{1}{\unit[10]{\si{\Mohm}}}}) - \unit[1]{\si{\Mohm}}}{\unit[100]{\si{\kohm}}} \times 100\\
+&= 0,009901 \%
 \end{align}
 
 \begin{figure}
@@ -411,7 +421,18 @@ R_{th} &= \unit[337,72]{\si{\ohm}}
     \label{fig:5-thevenin-schem3}
 \end{figure}
 
-\pagebreak
+
+\subsection{Kommentar}
+% ------------------------------------------------------------------------------
+Att reducera kretsar eller hela apparater till en enkel svart låda med två
+anslutningar vars funktion helt kan beskrivas med Thévenins teorem är en teknik
+som används mycket ofta vid design och analys av kretsar.
+Det gör det möjligt att bryta ner en större konstruktion till mindre moduler
+som kan analyseras var för sig. Relevant för området är bestämning av
+ingångsimpedans och utgångsimpedans, förmåga att driva andra kretsar eller 
+apparater. Det är mycket viktigt att relativt enkelt kunna förutse hur olika
+moduler eller sektioner skulle komma att påverkas av att kopplas samman.
+
 
 % ==============================================================================
 % SECTION: 6 KARAKTERISTIK HOS EN LYSDIOD
